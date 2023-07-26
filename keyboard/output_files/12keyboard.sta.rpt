@@ -1,0 +1,608 @@
+TimeQuest Timing Analyzer report for 12keyboard
+Wed Jul 26 22:22:53 2023
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'counter:inst2|lpm_counter:a_rtl_0|dffs[11]'
+ 12. Setup: 'clk_sys'
+ 13. Hold: 'clk_sys'
+ 14. Hold: 'counter:inst2|lpm_counter:a_rtl_0|dffs[11]'
+ 15. Minimum Pulse Width: 'clk_sys'
+ 16. Minimum Pulse Width: 'counter:inst2|lpm_counter:a_rtl_0|dffs[11]'
+ 17. Setup Times
+ 18. Hold Times
+ 19. Clock to Output Times
+ 20. Minimum Clock to Output Times
+ 21. Setup Transfers
+ 22. Hold Transfers
+ 23. Report TCCS
+ 24. Report RSKM
+ 25. Unconstrained Paths
+ 26. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; 12keyboard                                                        ;
+; Device Family      ; MAX3000A                                                          ;
+; Device Name        ; EPM3064ALC44-10                                                   ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Slow Model                                                        ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                 ;
++--------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------------------------------+
+; Clock Name                                 ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                        ;
++--------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------------------------------+
+; clk_sys                                    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk_sys }                                    ;
+; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { counter:inst2|lpm_counter:a_rtl_0|dffs[11] } ;
++--------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Fmax Summary                                                                    ;
++-----------+-----------------+--------------------------------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name                                 ; Note ;
++-----------+-----------------+--------------------------------------------+------+
+; 49.5 MHz  ; 49.5 MHz        ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;      ;
+; 100.0 MHz ; 100.0 MHz       ; clk_sys                                    ;      ;
++-----------+-----------------+--------------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------------------------------------------+
+; Setup Summary                                                       ;
++--------------------------------------------+--------+---------------+
+; Clock                                      ; Slack  ; End Point TNS ;
++--------------------------------------------+--------+---------------+
+; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; -9.600 ; -55.600       ;
+; clk_sys                                    ; -9.000 ; -108.000      ;
++--------------------------------------------+--------+---------------+
+
+
++--------------------------------------------------------------------+
+; Hold Summary                                                       ;
++--------------------------------------------+-------+---------------+
+; Clock                                      ; Slack ; End Point TNS ;
++--------------------------------------------+-------+---------------+
+; clk_sys                                    ; 0.600 ; 0.000         ;
+; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 5.800 ; 0.000         ;
++--------------------------------------------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++---------------------------------------------------------------------+
+; Minimum Pulse Width Summary                                         ;
++--------------------------------------------+--------+---------------+
+; Clock                                      ; Slack  ; End Point TNS ;
++--------------------------------------------+--------+---------------+
+; clk_sys                                    ; -3.500 ; -84.000       ;
+; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; -3.500 ; -42.000       ;
++--------------------------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'counter:inst2|lpm_counter:a_rtl_0|dffs[11]'                                                                                                                                             ;
++--------+--------------------------+--------------------------+--------------------------------------------+--------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                ; To Node                  ; Launch Clock                               ; Latch Clock                                ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------+--------------------------+--------------------------------------------+--------------------------------------------+--------------+------------+------------+
+; -9.600 ; scanner:inst|counter[0]  ; scanner:inst|data_out[2] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 0.500        ; 0.000      ; 7.200      ;
+; -9.500 ; scanner:inst|counter[1]  ; scanner:inst|data_out[3] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 0.500        ; 0.000      ; 7.100      ;
+; -9.200 ; scanner:inst|data_out[3] ; scanner:inst|data_out[3] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200 ; scanner:inst|data_out[2] ; scanner:inst|data_out[2] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200 ; scanner:inst|data_out[0] ; scanner:inst|data_out[0] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 1.000        ; 0.000      ; 7.300      ;
+; -9.200 ; scanner:inst|data_out[1] ; scanner:inst|data_out[1] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 1.000        ; 0.000      ; 7.300      ;
+; -9.100 ; scanner:inst|counter[0]  ; scanner:inst|counter[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 1.000        ; 0.000      ; 7.200      ;
+; -9.000 ; scanner:inst|counter[1]  ; scanner:inst|counter[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; scanner:inst|counter[0]  ; scanner:inst|counter[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 1.000        ; 0.000      ; 7.100      ;
++--------+--------------------------+--------------------------+--------------------------------------------+--------------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk_sys'                                                                                                                                                                                     ;
++--------+--------------------------------------------+--------------------------------------------+--------------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                  ; To Node                                    ; Launch Clock                               ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------+--------------------------------------------+--------------------------------------------+-------------+--------------+------------+------------+
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -9.000 ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 1.000        ; 0.000      ; 7.100      ;
+; -4.300 ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys     ; 0.500        ; 3.600      ; 7.100      ;
+; -3.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys     ; 1.000        ; 3.600      ; 7.100      ;
++--------+--------------------------------------------+--------------------------------------------+--------------------------------------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk_sys'                                                                                                                                                                                     ;
++-------+--------------------------------------------+--------------------------------------------+--------------------------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                  ; To Node                                    ; Launch Clock                               ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------+--------------------------------------------+--------------------------------------------+-------------+--------------+------------+------------+
+; 0.600 ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys     ; 0.000        ; 3.600      ; 7.100      ;
+; 1.100 ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys     ; -0.500       ; 3.600      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; clk_sys     ; 0.000        ; 0.000      ; 7.100      ;
++-------+--------------------------------------------+--------------------------------------------+--------------------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'counter:inst2|lpm_counter:a_rtl_0|dffs[11]'                                                                                                                                             ;
++-------+--------------------------+--------------------------+--------------------------------------------+--------------------------------------------+--------------+------------+------------+
+; Slack ; From Node                ; To Node                  ; Launch Clock                               ; Latch Clock                                ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------+--------------------------+--------------------------------------------+--------------------------------------------+--------------+------------+------------+
+; 5.800 ; scanner:inst|counter[1]  ; scanner:inst|counter[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; scanner:inst|counter[0]  ; scanner:inst|counter[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 0.000        ; 0.000      ; 7.100      ;
+; 5.900 ; scanner:inst|counter[0]  ; scanner:inst|counter[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 0.000        ; 0.000      ; 7.200      ;
+; 6.000 ; scanner:inst|data_out[3] ; scanner:inst|data_out[3] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; scanner:inst|data_out[2] ; scanner:inst|data_out[2] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; scanner:inst|data_out[0] ; scanner:inst|data_out[0] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; scanner:inst|data_out[1] ; scanner:inst|data_out[1] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 0.000        ; 0.000      ; 7.300      ;
+; 6.300 ; scanner:inst|counter[1]  ; scanner:inst|data_out[3] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; -0.500       ; 0.000      ; 7.100      ;
+; 6.400 ; scanner:inst|counter[0]  ; scanner:inst|data_out[2] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; -0.500       ; 0.000      ; 7.200      ;
++-------+--------------------------+--------------------------+--------------------------------------------+--------------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'clk_sys'                                                                                                ;
++--------+--------------+----------------+------------------+---------+------------+--------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock   ; Clock Edge ; Target                                     ;
++--------+--------------+----------------+------------------+---------+------------+--------------------------------------------+
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[0]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[10] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[1]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[2]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[3]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[4]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[5]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[6]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[7]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[8]  ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; clk_sys ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[9]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_sys ; Rise       ; clk_sys|dataout                            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_sys ; Rise       ; clk_sys|dataout                            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[0]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[0]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[10]|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[10]|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[11]|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[11]|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[1]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[1]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[2]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[2]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[3]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[3]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[4]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[4]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[5]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[5]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[6]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[6]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[7]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[7]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[8]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[8]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[9]|clk                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_sys ; Rise       ; inst2|a_rtl_0|dffs[9]|clk                  ;
++--------+--------------+----------------+------------------+---------+------------+--------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'counter:inst2|lpm_counter:a_rtl_0|dffs[11]'                                                                                    ;
++--------+--------------+----------------+------------------+--------------------------------------------+------------+--------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                                      ; Clock Edge ; Target                         ;
++--------+--------------+----------------+------------------+--------------------------------------------+------------+--------------------------------+
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Rise       ; scanner:inst|counter[0]        ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Rise       ; scanner:inst|counter[0]        ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Rise       ; scanner:inst|counter[1]        ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Rise       ; scanner:inst|counter[1]        ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Fall       ; scanner:inst|data_out[0]       ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Fall       ; scanner:inst|data_out[0]       ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Fall       ; scanner:inst|data_out[1]       ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Fall       ; scanner:inst|data_out[1]       ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Fall       ; scanner:inst|data_out[2]       ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Fall       ; scanner:inst|data_out[2]       ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Fall       ; scanner:inst|data_out[3]       ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Fall       ; scanner:inst|data_out[3]       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Rise       ; inst2|a_rtl_0|dffs[11]|dataout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Rise       ; inst2|a_rtl_0|dffs[11]|dataout ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Rise       ; inst|counter[0]|[0]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Rise       ; inst|counter[0]|[0]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Rise       ; inst|counter[1]|[1]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Rise       ; inst|counter[1]|[1]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Rise       ; inst|data_out[0]|[5]           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Rise       ; inst|data_out[0]|[5]           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Rise       ; inst|data_out[1]|[5]           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Rise       ; inst|data_out[1]|[5]           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Rise       ; inst|data_out[2]|[6]           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Rise       ; inst|data_out[2]|[6]           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Rise       ; inst|data_out[3]|[6]           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; Rise       ; inst|data_out[3]|[6]           ;
++--------+--------------+----------------+------------------+--------------------------------------------+------------+--------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                                        ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+; Data Port   ; Clock Port                                 ; Rise  ; Fall  ; Clock Edge ; Clock Reference                            ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+; key_col[*]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 5.000 ; 5.000 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  key_col[0] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 5.000 ; 5.000 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  key_col[1] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 5.000 ; 5.000 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  key_col[2] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 5.000 ; 5.000 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  key_col[3] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 5.000 ; 5.000 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
++-------------+--------------------------------------------+-------+-------+------------+--------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                                           ;
++-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
+; Data Port   ; Clock Port                                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference                            ;
++-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
+; key_col[*]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; -0.800 ; -0.800 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  key_col[0] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; -0.800 ; -0.800 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  key_col[1] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; -0.800 ; -0.800 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  key_col[2] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; -0.800 ; -0.800 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  key_col[3] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; -0.800 ; -0.800 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
++-------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                                 ;
++--------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
+; Data Port    ; Clock Port                                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference                            ;
++--------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
+; key_row[*]   ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.200 ; 15.200 ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  key_row[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.200 ; 15.200 ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  key_row[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.200 ; 15.200 ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  key_row[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.200 ; 15.200 ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  key_row[3]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.200 ; 15.200 ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+; 7seg_out[*]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.300 ; 15.300 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  7seg_out[0] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.300 ; 15.300 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  7seg_out[1] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.300 ; 15.300 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  7seg_out[2] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.300 ; 15.300 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  7seg_out[3] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.300 ; 15.300 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  7seg_out[4] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.300 ; 15.300 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  7seg_out[5] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.300 ; 15.300 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  7seg_out[6] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.300 ; 15.300 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
++--------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                                         ;
++--------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
+; Data Port    ; Clock Port                                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference                            ;
++--------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
+; key_row[*]   ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.100 ; 15.100 ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  key_row[0]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.100 ; 15.100 ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  key_row[1]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.100 ; 15.100 ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  key_row[2]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.100 ; 15.100 ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  key_row[3]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.100 ; 15.100 ; Rise       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+; 7seg_out[*]  ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.300 ; 15.300 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  7seg_out[0] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.300 ; 15.300 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  7seg_out[1] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.300 ; 15.300 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  7seg_out[2] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.300 ; 15.300 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  7seg_out[3] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.300 ; 15.300 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  7seg_out[4] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.300 ; 15.300 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  7seg_out[5] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.300 ; 15.300 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
+;  7seg_out[6] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 15.300 ; 15.300 ; Fall       ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ;
++--------------+--------------------------------------------+--------+--------+------------+--------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                     ;
++--------------------------------------------+--------------------------------------------+----------+----------+----------+----------+
+; From Clock                                 ; To Clock                                   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------------------------------------+--------------------------------------------+----------+----------+----------+----------+
+; clk_sys                                    ; clk_sys                                    ; 78       ; 0        ; 0        ; 0        ;
+; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; 1        ; 1        ; 0        ; 0        ;
+; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 3        ; 0        ; 6        ; 6        ;
++--------------------------------------------+--------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                      ;
++--------------------------------------------+--------------------------------------------+----------+----------+----------+----------+
+; From Clock                                 ; To Clock                                   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------------------------------------+--------------------------------------------+----------+----------+----------+----------+
+; clk_sys                                    ; clk_sys                                    ; 78       ; 0        ; 0        ; 0        ;
+; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; clk_sys                                    ; 1        ; 1        ; 0        ; 0        ;
+; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; counter:inst2|lpm_counter:a_rtl_0|dffs[11] ; 3        ; 0        ; 6        ; 6        ;
++--------------------------------------------+--------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 16    ; 16   ;
+; Unconstrained Output Ports      ; 11    ; 11   ;
+; Unconstrained Output Port Paths ; 36    ; 36   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Jul 26 22:22:53 2023
+Info: Command: quartus_sta 12keyboard -c 12keyboard
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Warning (335095): TimeQuest Timing Analyzer does not support the analysis of latches as synchronous elements for the currently selected device family.
+Critical Warning (332012): Synopsys Design Constraints File file not found: '12keyboard.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk_sys clk_sys
+    Info (332105): create_clock -period 1.000 -name counter:inst2|lpm_counter:a_rtl_0|dffs[11] counter:inst2|lpm_counter:a_rtl_0|dffs[11]
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -9.600
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -9.600       -55.600 counter:inst2|lpm_counter:a_rtl_0|dffs[11] 
+    Info (332119):    -9.000      -108.000 clk_sys 
+Info (332146): Worst-case hold slack is 0.600
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.600         0.000 clk_sys 
+    Info (332119):     5.800         0.000 counter:inst2|lpm_counter:a_rtl_0|dffs[11] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.500
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.500       -84.000 clk_sys 
+    Info (332119):    -3.500       -42.000 counter:inst2|lpm_counter:a_rtl_0|dffs[11] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4510 megabytes
+    Info: Processing ended: Wed Jul 26 22:22:53 2023
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

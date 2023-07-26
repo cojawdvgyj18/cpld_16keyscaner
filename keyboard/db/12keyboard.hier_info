@@ -1,0 +1,71 @@
+|12keyboard
+7seg_out[0] <= rom:inst1.data_out[0]
+7seg_out[1] <= rom:inst1.data_out[1]
+7seg_out[2] <= rom:inst1.data_out[2]
+7seg_out[3] <= rom:inst1.data_out[3]
+7seg_out[4] <= rom:inst1.data_out[4]
+7seg_out[5] <= rom:inst1.data_out[5]
+7seg_out[6] <= rom:inst1.data_out[6]
+clk_sys => counter:inst2.clk_in
+key_col[0] => scanner:inst.key_col[0]
+key_col[1] => scanner:inst.key_col[1]
+key_col[2] => scanner:inst.key_col[2]
+key_col[3] => scanner:inst.key_col[3]
+key_row[0] <= scanner:inst.key_row[0]
+key_row[1] <= scanner:inst.key_row[1]
+key_row[2] <= scanner:inst.key_row[2]
+key_row[3] <= scanner:inst.key_row[3]
+
+
+|12keyboard|rom:inst1
+address[0] => Decoder0.IN3
+address[1] => Decoder0.IN2
+address[2] => Decoder0.IN1
+address[3] => Decoder0.IN0
+data_out[0] <= data_out.DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] <= data_out.DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] <= data_out.DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] <= data_out.DB_MAX_OUTPUT_PORT_TYPE
+data_out[4] <= data_out.DB_MAX_OUTPUT_PORT_TYPE
+data_out[5] <= data_out.DB_MAX_OUTPUT_PORT_TYPE
+data_out[6] <= data_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|12keyboard|scanner:inst
+clk => always1.IN0
+clk => counter[0].CLK
+clk => counter[1].CLK
+key_col[0] => Equal0.IN7
+key_col[1] => Equal0.IN6
+key_col[1] => Mux1.IN5
+key_col[2] => Equal0.IN5
+key_col[2] => Mux0.IN5
+key_col[3] => Equal0.IN4
+key_col[3] => Mux0.IN4
+key_col[3] => Mux1.IN4
+key_row[0] <= key_row.DB_MAX_OUTPUT_PORT_TYPE
+key_row[1] <= key_row.DB_MAX_OUTPUT_PORT_TYPE
+key_row[2] <= key_row.DB_MAX_OUTPUT_PORT_TYPE
+key_row[3] <= key_row.DB_MAX_OUTPUT_PORT_TYPE
+data_out[0] <= data_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] <= data_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] <= data_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] <= data_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|12keyboard|counter:inst2
+clk_in => a[0].CLK
+clk_in => a[1].CLK
+clk_in => a[2].CLK
+clk_in => a[3].CLK
+clk_in => a[4].CLK
+clk_in => a[5].CLK
+clk_in => a[6].CLK
+clk_in => a[7].CLK
+clk_in => a[8].CLK
+clk_in => a[9].CLK
+clk_in => a[10].CLK
+clk_in => a[11].CLK
+clk_out <= a[11].DB_MAX_OUTPUT_PORT_TYPE
+
+
